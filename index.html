@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Deine Mahlzeit-App</title>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="assets/img/logo.png" alt="Mahlzeit-Logo" style="width: 150px;">
+        </div>
+        <nav>
+            <a href="#">Entdecken</a>
+            <a href="#">Kategorien</a>
+            <a href="#">Zufallsrezept</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Was kochen wir heute?</h1>
+        <p class="sub">Suche nach einem Gericht oder lass dich überraschen.</p>
+
+        <div class="such-container">
+            <input type="text" id="suche-input" placeholder="z.B. Arabiata">
+            <button id="btn-suchen">Suchen</button>
+            <button id="btn-random">Überrasch mich!</button>
+        </div>
+
+        <div class="filter">
+            <!-- <button onclick="filterInventar('all')">Alle</button> -->
+            <button id="all">Alle</button>
+            <button id="beef">Beef</button>
+            <button id="chicken">Chicken</button>
+            <button id="dessert">Dessert</button>
+            <button id="pasta">Pasta</button>
+            <button id="seafood">Seafood</button>
+            <button id="vegetarian">Vegetarian</button>
+        </div>
+
+        <h2>Gerichte</h2>
+        <div class="gerichte-container">Ich weiß noch nicht ob ich hier Kaarten-Schablonen machen muss</div>
+    </main>
+
+    <footer>
+        <p>Rezeptdaten von <span><a href="https://www.themealdb.com/api.php">TheMealDB.com</a></span></p>
+
+    </footer>
+
+</body>
+
+</html>
