@@ -85,12 +85,12 @@ async function getRecipe() {
         const zubereitungArray = zubereitung.split(".").filter(s => s.length > 0);
         console.log(zubereitungArray);
 
-        const zubereitunsListe = document.getElementById("instructions")
+        const zubereitungsListe = document.getElementById("instructions")
 
         zubereitungArray.forEach(schritt => {
             const li = document.createElement("li");
             li.textContent = schritt + "."
-            zubereitunsListe.appendChild(li)
+            zubereitungsListe.appendChild(li)
         })
 
     } catch (error) {
