@@ -8,7 +8,13 @@ async function getCardRecipe(api) {
             const response = await fetch(api)
             const data = await response.json()
 
-            const randGericht = data.meals[0]
+
+            /* ------------------------------ */
+            const randGericht = data.meals[i] || data.meals[0]
+            if (!data.meals[i] && !api.includes("random.php")) {
+                break;
+            }
+            /* ------------------------------ */
 
             const { strMealThumb, strArea, strCategory, strMeal, idMeal } = randGericht
 
@@ -60,7 +66,7 @@ async function getCardRecipe(api) {
 getCardRecipe(rand_api)
 
 /* ========== Suchfunktion ========== */
-// FIXME: Suche zeigt immer die gleichen Karten an, try/catch
+// FIXME: Suche: wenn es nur ein Ergebnis gibt, zeigt Suche immer die gleichen Karten an, try/catch
 const sucheInput = document.getElementById("suche-input");
 const suchBtn = document.getElementById("btn-suchen");
 
@@ -70,12 +76,12 @@ suchBtn.addEventListener("click", (event) => {
     getCardRecipe(such_API)
 });
 
-/* NEU: Event-Listener für die Enter-Taste im Eingabefeld
+//Event-Listener für die Enter-Taste im Eingabefeld
 sucheInput.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
         suchBtn.click();
     }
-}); */
+});
 
 /* ========== Filtern ========== */
 
@@ -84,10 +90,10 @@ const cat_api_basic = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
 async function filterRezepte(cat) {
     let cat_api;
 
-  if (cat == "all") {
+    if (cat == "all") {
         cat_api = rand_api;
     } else {
         cat_api = cat_api_basic + cat;
-    }    
+    }
     getCardRecipe(cat_api);
 }
