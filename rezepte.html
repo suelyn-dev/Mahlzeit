@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/rezepte.js" defer></script>
     <title>Rezeptvorschlag</title>
 </head>
 
@@ -22,22 +23,25 @@
     <main>
         <a href="index.html" id="back">&larr; zurück zur Übersicht</a>
         <section class="rezepte-hero">
-            <div class="img-large">Placeholder imgLarge</div>
+            <div id="img-large"></div>
             <div class="details">
-                <div class="labels">StrArea</div>
-                <div class="labels">StrCathegory</div>
+                <div id="details-labels">
+                    <div class="labels" id="area"></div>
+                    <div class="labels" id="category"></div>
+                </div>
     
-                <h1 class="title">Placeholder strMeal</h1>
-    
-                <a href="#" id="video-btn">Video ansehen ***strYoutube***</a>
-                <a href="#" id="anderes-btn">Anderes Rezept</a>
-
-                <ul id="zutaten">Zutaten</ul>
+                <h1 id="title"></h1>
+                <div class="details-links">
+                    <a id="video-btn" target="_blank"target="_blank">Video ansehen</a>
+                    <a href="#" id="anderes-btn">Anderes Rezept</a>
+                </div>
+                <h2>Ingredients</h2>
+                <table id="zutaten-tabelle"></table>
             </div>
         </section>
         <section class="zubereitung">
-            <h2>Zubereitung</h2>
-            <ol id="introductions">Anleitung</ol>
+            <h2>Instructions</h2>
+            <ol id="instructionsx"></ol>
         </section>
     </main>
     <footer>

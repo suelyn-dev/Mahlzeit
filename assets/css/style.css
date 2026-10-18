@@ -30,6 +30,7 @@ h1,
 h2,
 p {
     padding: 0 0 0 20px;
+    padding-left: 0; /* keine Ahnung warum sonst Ingredients eingerückt */
 }
 
 /* ############ Such-Container ############ */
@@ -51,8 +52,15 @@ p {
 /* ############ Gerichte-Container ############ */
 .gerichte-container {
     display: grid;
-    grid-template-columns: repreat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+/* ############ Karten ############ */
+.karte{
+    color: #1F4A3A;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ############ Footer ############ */
@@ -77,6 +85,7 @@ footer {
     border:1px solid #1F4A3A;
     border-radius: 10px;
     font-weight: bold;
+    margin-left: 20px;
 }
 
 .labels{
@@ -97,8 +106,14 @@ footer {
 .rezepte-hero {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
 }
 
 .rezepte-hero h1 {
     padding: 0;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
 }
