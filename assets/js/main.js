@@ -2,10 +2,11 @@ const rand_api = "https://www.themealdb.com/api/json/v1/1/random.php"
 
 async function getCardRecipe(api) {
     const kartenContainer = document.getElementById("gerichte-container")
-    kartenContainer.innerHTML = ""
+    kartenContainer.innerHTML = "";
     try {
         
         for (let i = 0; i < 6; i++) {
+            
             const response = await fetch(api)
             const data = await response.json()
 
@@ -74,7 +75,8 @@ async function getCardRecipe(api) {
         console.log("Die gewünschten rezepte können nicht angezeigt werden");
     }
 }
-getCardRecipe(rand_api)
+    getCardRecipe(rand_api);
+
 
 /* ========== Suchfunktion ========== */
 // FIXME: Suche: wenn es nur ein Ergebnis gibt, zeigt Suche immer die gleichen Karten an, try/catch
