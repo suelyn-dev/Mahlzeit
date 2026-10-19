@@ -125,8 +125,8 @@ buttons.forEach(button => {
 
 /* ========== Überrasch mich! ========== */
 
-const surprise = document.querySelector(".btn-random")
+const surprise = document.querySelector("#btn-random, #zufall")
 
 surprise.addEventListener("click", () => {
-    window.location.href = "rezepte.html?random.php"
+    window.location.href = "rezepte.html?source=random"
 })

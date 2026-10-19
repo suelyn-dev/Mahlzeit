@@ -3,10 +3,18 @@
 /* parameter.get("id") holt die ID raus, mehrere KEys werden mit & getrennt */
 
 const parameter = new URLSearchParams(window.location.search);
-const rezeptId = parameter.get("id"); 
+const rezeptId = parameter.get("id");
+/* const surprise = parameter.get("source") ==="random" */
 
 //passende API-URL für IDs:
-const api_url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + rezeptId;
+
+let api_url
+
+if(rezeptId){
+    api_url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + rezeptId;
+} else {
+    api_url = "https://www.themealdb.com/api/json/v1/1/random.php"
+}
 
 getRecipe(api_url)
 
