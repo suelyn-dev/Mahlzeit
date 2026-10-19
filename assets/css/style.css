@@ -151,3 +151,49 @@ footer {
     flex-direction: column;
 }
 
+
+/* ============================================================
+   MOBILE ANSICHT (Bildschirme unter 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+    
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav {
+        gap: 12px;          
+        font-size: 0.9rem;  
+    }
+
+    .such-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #suche-input {
+        width: 95%;       
+    }
+
+    .filter {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .gerichte-container {
+        grid-template-columns: 1fr; 
+    }
+
+    #img-vorschau {
+        width: 100%;         
+        height: auto;
+    }
+
+    .rezepte-hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
