@@ -8,9 +8,13 @@ const rezeptId = parameter.get("id");
 //passende API-URL für IDs:
 const api_url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + rezeptId;
 
-async function getRecipe() {
+getRecipe(api_url)
+
+
+
+async function getRecipe(api) {
     try {
-        const response = await fetch(api_url)
+        const response = await fetch(api)
         const data = await response.json()
 
         const gericht = data.meals[0]
@@ -98,4 +102,3 @@ async function getRecipe() {
     }
 }
 
-getRecipe()

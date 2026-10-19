@@ -37,8 +37,12 @@ p {
 .such-container {
     display: flex;
     justify-content: start;
-    gap: 20px;
+    gap: 5px;
     padding: 20px;
+}
+
+#suche-input {
+    width: 25rem;
 }
 
 /* ############ Such-Container ############ */
@@ -97,8 +101,12 @@ footer {
     border:1px solid #1F4A3A;
     border-radius: 10px;
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 10px;
     background-color: white;
+}
+
+#btn-random:hover {
+    background-color: #618477;
 }
 
 .labels{
@@ -117,7 +125,7 @@ footer {
 
 .filter-btn{
     background-color: white !important;
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 10px;
     color: #1F4A3A;
 }
