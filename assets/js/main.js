@@ -7,14 +7,23 @@ async function getCardRecipe(api) {
         for (let i = 0; i < 6; i++) {
             const response = await fetch(api)
             const data = await response.json()
+            
+            //Wenn es nichts gibt:
+            if (data.meals === null) {
+                const message = document.createElement("h2")
+                message.textContent = "Leider gibt es zu deiner Suchanfrage noch kein passendes Gericht!"
+                document.getElementById("gerichte-container").appendChild(message)
+                break;
+            }
 
-
+            //Damit keine Doppelungen bei Suche und Filtern kommen:
             /* ------------------------------ */
-            const randGericht = data.meals[i] || data.meals[0]
             if (!data.meals[i] && !api.includes("random.php")) {
                 break;
             }
             /* ------------------------------ */
+
+            const randGericht = data.meals[i] || data.meals[0]
 
             const { strMealThumb, strArea, strCategory, strMeal, idMeal } = randGericht
 
@@ -24,7 +33,8 @@ async function getCardRecipe(api) {
 
             //Vorschau-Bild
             const imgSmall = document.createElement("img")
-            imgSmall.src = strMealThumb + "/small"
+            imgSmall.id = "img-vorschau"
+            imgSmall.src = strMealThumb + "/medium"
             karte.appendChild(imgSmall)
 
             //Labels
@@ -71,9 +81,13 @@ const sucheInput = document.getElementById("suche-input");
 const suchBtn = document.getElementById("btn-suchen");
 
 suchBtn.addEventListener("click", (event) => {
-    const suchText = sucheInput.value;
-    const such_API = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + suchText
-    getCardRecipe(such_API)
+    try {
+        const suchText = sucheInput.value;
+        const such_API = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + suchText
+        getCardRecipe(such_API)
+    } catch (error) {
+        console.log("Da ist was schiefgegangen!");
+    }
 });
 
 //Event-Listener für die Enter-Taste im Eingabefeld

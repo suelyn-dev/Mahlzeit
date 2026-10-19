@@ -56,6 +56,15 @@ p {
     gap: 20px;
 }
 
+#gerichte-container h2 {
+    width: 100%;           
+    white-space: nowrap;  
+}
+
+#img-vorschau{
+    width: 30vw;
+}
+
 /* ############ Karten ############ */
 .karte{
     color: #1F4A3A;
@@ -117,3 +126,4 @@ footer {
     display: flex;
     flex-direction: column;
 }
+
