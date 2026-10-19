@@ -104,10 +104,21 @@ const cat_api_basic = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
 async function filterRezepte(cat) {
     let cat_api;
 
-    if (cat == "all") {
+    if (cat === "all") {
         cat_api = rand_api;
     } else {
         cat_api = cat_api_basic + cat;
     }
     getCardRecipe(cat_api);
 }
+
+/* ========== Filtern-Buttons einfärben ========== */
+
+const buttons = document.querySelectorAll(".filter-btn")
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        buttons.forEach(btn => btn.classList.remove("active"))
+        button.classList.add("active")
+    })
+})

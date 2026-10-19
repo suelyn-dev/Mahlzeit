@@ -80,21 +80,25 @@ footer {
 }
 
 /* ############ Buttons/labels ############ */
-#video-btn {
+#video-btn,
+#btn-suchen {
     color: white;
     padding: 10px;
     background-color: #C93E22;
     border-radius: 10px;
     font-weight: bold;
+    border: none;
 }
 
-#anderes-btn {
+#anderes-btn,
+#btn-random {
     color: #1F4A3A;
     padding: 10px;
     border:1px solid #1F4A3A;
     border-radius: 10px;
     font-weight: bold;
     margin-left: 20px;
+    background-color: white;
 }
 
 .labels{
@@ -109,6 +113,18 @@ footer {
 #back {
     font-size: 0.6rem;
     color: #1F4A3A;
+}
+
+.filter-btn{
+    background-color: white !important;
+    border-radius: 20px;
+    padding: 10px;
+    color: #1F4A3A;
+}
+
+.filter-btn.active {
+    background-color: #1F4A3A !important;
+    color: white;
 }
 
 /* ############ Rezepte ############ */
