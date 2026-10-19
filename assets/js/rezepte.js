@@ -52,6 +52,9 @@ async function getRecipe(api) {
 
         //Labels einfügen
         document.getElementById("area").textContent = strArea
+        if(!strArea  || strArea.trim()===""){
+            document.getElementById("area").style.display = "none"
+        }
         document.getElementById("category").textContent = strCategory
 
         //Titel
