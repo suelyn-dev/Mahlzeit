@@ -57,9 +57,13 @@ async function getRecipe(api) {
         //Titel
         document.getElementById("title").textContent = strMeal
 
-        //Video
+        //Video (ausblenden wenn nicht vorhanden)
         const videoLink = document.getElementById("video-btn");
-        videoLink.href = strYoutube
+        if(!strYoutube || strYoutube.trim() === ""){
+            videoLink.style.display = "none"
+        }else{
+            videoLink.href = strYoutube
+        }
 
         //Liste Zutaten
         const tabelle = document.getElementById("zutaten-tabelle");

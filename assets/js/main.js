@@ -4,10 +4,11 @@ async function getCardRecipe(api) {
     const kartenContainer = document.getElementById("gerichte-container")
     kartenContainer.innerHTML = ""
     try {
+        
         for (let i = 0; i < 6; i++) {
             const response = await fetch(api)
             const data = await response.json()
-            
+
             //Wenn es nichts gibt:
             if (data.meals === null) {
                 const message = document.createElement("h2")
@@ -125,8 +126,10 @@ buttons.forEach(button => {
 
 /* ========== Überrasch mich! ========== */
 
-const surprise = document.querySelector("#btn-random, #zufall")
+const surpriseButtons = document.querySelectorAll("#btn-random, #zufall")
 
-surprise.addEventListener("click", () => {
+surpriseButtons.forEach(button =>{
+    button.addEventListener("click", () => {
     window.location.href = "rezepte.html?source=random"
+})
 })
